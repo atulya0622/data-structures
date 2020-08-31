@@ -33,7 +33,7 @@ public class QueueUsingLinkedList{
 	public static int size(){
 		Node temp=front;
 		int count=0;
-		while(temp!=rear){
+		while(temp!=null){
 			count++;
 			temp=temp.next;
 		}
@@ -48,16 +48,20 @@ public class QueueUsingLinkedList{
 		System.out.print("\n");
 	}
     public static void main(String[] args){
+        int n;
     	System.out.println("Begin\n");
 		enqueue(10);
 		enqueue(20);
 		enqueue(30);
 		enqueue(50);
+		System.out.println("The size of the queue is "+size());
 		print();
 		dequeue();
 		print();
+		System.out.println("The size of the queue is "+size());
 		dequeue();
 		print();
+		System.out.println("The size of the queue is "+size());
 		System.out.println("End\n");
 	}
 }
