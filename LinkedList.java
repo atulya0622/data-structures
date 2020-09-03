@@ -128,37 +128,10 @@ public class LinkedList{
 			}
 		}
 	
-				
-public static void main(String args[])
-{
-	int n;
-LinkedList list=new LinkedList();
-list=insertAtTail(list,1);
-list=insertAtTail(list,2);
-list=insertAtTail(list,3);
-System.out.println("Insertion at Tail:");
-printList(list);
-list=insertAtHead(list,4);
-list=insertAtHead(list,5);
-System.out.println("Insertion at Head:");
-printList(list);
-list=insertAtPosition(list,6,3);
-list=insertAtPosition(list,7,5);
-System.out.println("Insertion at Position:");
-printList(list);
-list=removeFromLast(list);
-System.out.println("Removal from last:");
-printList(list);
-list=removeFromHead(list);
-System.out.println("Removal from head:");
-printList(list);
-list=removeFromPosition(list,4);
-
-System.out.println("Removal from given position:");
-printList(list);
+}			
 
 
 
 
-}
-}
+
+
