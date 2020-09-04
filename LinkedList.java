@@ -71,24 +71,15 @@ public class LinkedList{
 			
 			if (pos == 0 && currNode != null) { 
             this.head = currNode.next; 
-            
-           
-  
-            
-             
-			}
+        }
             int counter = 0; 
   
-			
         while (currNode != null) { 
   
             if (counter == pos) { 
                
                 prev.next = currNode.next; 
-  
-                
-               
-                break; 
+		    break; 
             } 
             else { 
                 
@@ -115,8 +106,8 @@ public class LinkedList{
 			prev.next=null;
 			 
 		}
-	public static int size(){
-		Node temp=front;
+	       public int size(){
+		Node temp=this.head;
 		int count=0;
 		while(temp!=null){
 			count++;
@@ -137,6 +128,23 @@ public class LinkedList{
 				currNode=currNode.next;
 			}
 		}
+	   public String toString()
+		{
+			Node temp=head;
+			if(temp==null)
+			{
+		      return "no elements";
+			}
+			else
+			{
+			String s="";
+			while(temp!=null)
+			{
+			s=s+temp.data+" ";
+			temp=temp.next;
+			}
+			return s;
+			}
 	
 				
 
