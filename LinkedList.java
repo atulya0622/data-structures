@@ -1,8 +1,8 @@
 import java.io.*;
 public class LinkedList{
-		Node head;
+		public Node head;
 		
-		public static class Node{
+		public class Node{
 			int data;
 			Node next;
 			
@@ -11,43 +11,43 @@ public class LinkedList{
 				next=null;
 			}
 		}
-		public static LinkedList insertAtTail(LinkedList list,int data){
+		public void insertAtTail(int data){
 			Node new_node=new Node(data);
 			new_node.next=null;
 			
-			if(list.head==null)
+			if(this.head==null)
 			{
-               list.head=new_node;
+               this.head=new_node;
 			}
 			else{
-				Node last=list.head;
+				Node last=this.head;
 				while(last.next!=null){
 					last=last.next;
 				}
 				last.next=new_node;
 			}
-			return list;
+			
 		}
-		public static LinkedList insertAtHead(LinkedList list,int data){
+		public void insertAtHead(int data){
 			Node new_node=new Node(data);
 			new_node.next=null;
-			if(list.head==null)
-				list.head=new_node;
+			if(this.head==null)
+				this.head=new_node;
 			else{
-				Node first=list.head;
-				list.head=new_node;
+				Node first=this.head;
+				this.head=new_node;
 				new_node.next=first;
 			}
-			return list;
+	
 		}
-		public static LinkedList insertAtPosition(LinkedList list,int data,int pos){
+		public void insertAtPosition(int data,int pos){
 			
 			Node new_node=new Node(data);
 			new_node.next=null;
-			if(list.head==null)
-				list.head=new_node;
+			if(this.head==null)
+				this.head=new_node;
 			else{
-				Node temp=list.head;
+				Node temp=this.head;
 				int count=0;
 				while(temp.next!=null)
 				{
@@ -63,31 +63,18 @@ public class LinkedList{
 				}
 				
 			}
-			return list;
+			
 		}
-		public static LinkedList removeFromPosition(LinkedList list,int pos){
-            Node currNode=list.head,prev=null;
-			
-			if (pos == 0 && currNode != null) { 
-            list.head = currNode.next; 
-            
-           
-  
-            
-            return list; 
-			}
-            int counter = 0; 
-  
-			
-        while (currNode != null) { 
-  
-            if (counter == pos) { 
-               
-                prev.next = currNode.next; 
-  
-                
-               
-                break; 
+	   public void removeFromPosition(int pos){
+             Node currNode=this.head,prev=null;
+	     if (pos == 0 && currNode != null) { 
+             this.head = currNode.next; 
+             }
+             int counter = 0; 
+             while (currNode != null) { 
+             if (counter == pos) { 
+             prev.next = currNode.next;
+             break; 
             } 
             else { 
                 
@@ -97,29 +84,29 @@ public class LinkedList{
             } 
             
 		}
-		return list;
+		
 		}
-		public static LinkedList removeFromHead(LinkedList list){
-			Node temp=list.head;
-			list.head=temp.next;
+		public void removeFromHead(){
+			Node temp=this.head;
+			this.head=temp.next;
 			temp.next=null;
-			return list;
+			
 		}
-		public static LinkedList removeFromLast(LinkedList list){
-			Node last=list.head,prev=null;
+		public void removeFromLast(){
+			Node last=this.head,prev=null;
 			while(last.next!=null){
 				prev=last;
 				last=last.next;
 			}
 			prev.next=null;
-			return list;
+	
 		}
 					
 					
                   					
-		public static void printList(LinkedList list)
+		public void printList()
 		{
-			Node currNode=list.head;
+			Node currNode=this.head;
 			System.out.println("LinkedList: ");
 			
 			while(currNode!=null){
@@ -127,6 +114,27 @@ public class LinkedList{
 				currNode=currNode.next;
 			}
 		}
+	       
+	       public String toString()
+		{
+			Node temp=head;
+			if(temp==null)
+			{
+		      return "no elements";
+			}
+			else
+			{
+			String s="";
+			while(temp!=null)
+			{
+			s=s+temp.data+" ";
+			temp=temp.next;
+			}
+			return s;
+			}
+
+		}
+
 	
 }			
 
