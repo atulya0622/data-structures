@@ -7,7 +7,7 @@ public class QueueTester {
         char ch;
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         
-        System.out.println("Enter your choice\n1.Enqueue\n2.Dequeue\n3.PRINT");
+        System.out.println("Enter your choice\n1.Enqueue\n2.Dequeue\n3.PRINT\n4.size");
         n=Integer.parseInt(br.readLine());
         switch(n){
             case 1:{
@@ -23,8 +23,10 @@ public class QueueTester {
 
             }
             break;
-            case 3: list.printList();
+            case 3: System.out.println(list);
             break;
+            case 4: System.out.println("Size is "+list.size());
+                break;
         }
        }
 }
